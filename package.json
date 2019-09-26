@@ -1,0 +1,27 @@
+{
+  "name": "wikistack",
+  "version": "1.0.0",
+  "description": "A wikipedia clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannygutmann/wikistack.git"
+  },
+  "keywords": [
+    "wikistack"
+  ],
+  "author": "Danny Gutmann & Colin Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannygutmann/wikistack/issues"
+  },
+  "homepage": "https://github.com/dannygutmann/wikistack#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "sequelize": "^5.19.0"
+  }
+}

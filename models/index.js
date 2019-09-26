@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const db = new Sequelize('postgres://localhost:5432/wikistack');
+const slugGenerator = require('../utils/slugGenerator');
 
 const Page = db.define('pages', {
   title: {
@@ -9,7 +10,6 @@ const Page = db.define('pages', {
   slug: {
     type: Sequelize.STRING,
     allowNull: false,
-    validate: { isURL: true },
   },
   content: {
     type: Sequelize.TEXT,
@@ -18,6 +18,10 @@ const Page = db.define('pages', {
   status: {
     type: Sequelize.ENUM('open', 'closed'),
   },
+});
+
+Page.beforeValidate(pageInstance => {
+  pageInstance.slug = slugGenerator();
 });
 
 const User = db.define('users', {

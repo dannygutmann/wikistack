@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  let getTitleInput =res.json(req.body.title);
+  let getTitleInput =res.json(req.body);
+
   console.log(getTitleInput);
 
   //res.send('inside the post route');
